@@ -15,14 +15,9 @@
 
   <script>
      function checkTransaction() {
-      fetch("http://20.0.104.109:3000/transaction")
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById("response").innerText = data.status;
-        })
-        .catch(error => {
-          document.getElementById("response").innerText = "Error: " + error;
-        });
+        fetch("http://10.1.0.4:3000/transaction")
+  .then(res => res.json())
+  .then(data => console.log(data)).catch(err => console.log(err));
     }
 
     document.getElementById('txnForm').addEventListener('submit', async function (e) {
