@@ -9,8 +9,10 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Basic transaction endpoints
-app.get("/transaction", (req, res) => {
-  res.json({ status: "Transaction processed successfully." });
+app.get("/transaction", async (req, res) => {
+  const response = await fetch("http://10.1.0.4:3000/transaction");
+  const data = await response.json();
+  res.json(data);
 });
 
 app.get("/", (req, res) => {
