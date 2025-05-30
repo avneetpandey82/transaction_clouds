@@ -15,7 +15,7 @@
 
   <script>
      function checkTransaction() {
-      fetch("http://10.1.0.4:3000/transaction")
+      fetch("http://20.0.104.109:3000/transaction")
         .then(response => response.json())
         .then(data => {
           document.getElementById("response").innerText = data.status;
