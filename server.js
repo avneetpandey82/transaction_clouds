@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get('/health', (req, res) => {
+  res.sendStatus(200);
+});
+
 app.post("/process", (req, res) => {
   const { accountNumber, amount } = req.body;
 
