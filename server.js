@@ -10,9 +10,7 @@ app.use(express.static("public"));
 
 // Basic transaction endpoints
 app.get("/transaction", async (req, res) => {
-  const response = await fetch("http://10.1.0.4:3000/transaction");
-  const data = await response.json();
-  res.json(data);
+  res.status(200).send("transaction api")
 });
 
 app.get("/", (req, res) => {
